@@ -18,5 +18,8 @@ module BasicWebhookSystem
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.api_only = true
+    config.active_job.queue_adapter = :sidekiq
   end
 end
